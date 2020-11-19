@@ -1,0 +1,5 @@
+Class: test_question
+  Output: What is the best file type? 
+  AnswerChoices: SAM, BAM, VCF
+  CorrectAnswer: VCF
+  AnswerTests: omnitest(correctVal='VCF')

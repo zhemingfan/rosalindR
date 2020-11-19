@@ -1,0 +1,16 @@
+Package: rosalindR
+Title: Platform to practice bioinformatics coding challenges
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Jeremy",
+           family = "Fan",
+           role = c("aut", "cre"),
+           email = "first.last@example.com")
+Description: While numerous coding practice exists, the number of bioinformatics specific platforms are limited. Rosalind is one such online platform, but has limited integration with R. This packages seeks to bridge the gap by transferring the problems on Rosalind to an R platform so R users can easily solve problems.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat, tools

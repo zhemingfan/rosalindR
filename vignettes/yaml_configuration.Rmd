@@ -14,11 +14,19 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Installation
+
+As `rosalindR` is not on CRAN, you can install the development version of rosalindR from [GitHub](https://github.com/) through:
+
+```{r install package}
+devtools::install_github("zhemingfan/rosalindR")
+```
+
+## Example
+
 ```{r setup}
 library(rosalindR)
 ```
-
-Generally, yaml files containing coding questions can be imported (not implemented yet), and created. For instance, to initialize a yaml file in the root directory:
 
 ```{r create_function}
 create_question("Random Sequencing Question","~/.","Jeremy Fan")

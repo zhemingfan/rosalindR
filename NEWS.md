@@ -10,3 +10,4 @@
 * Removed R history files and added additional values to be deleted .gitignore
 * Updated README.Rmd to give a better overview
 * Split up organization of unit tests by argument number and hash check
+* Removed data folder (which was redundant for time being)

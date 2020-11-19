@@ -74,12 +74,11 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-
 <div id="rosalindr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#rosalindr" class="anchor"></a>rosalindR</h1></div>
 <!-- badges: start -->
-
+<p><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a> “<a href="https://cran.r-project.org/web/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>” <!-- badges: end --></p>
 <p>The goal of rosalindR is to offer an alternative platform to <a href="http://rosalind.info/problems/locations/">Rosalind</a>, a website aimed at providing students with bioinformatics coding challenges. In R, students can tackle these problems by being offered a .yaml file with questions and solutions. Open source conributors can further add more problems of Rosalind to this platform.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -89,9 +88,10 @@
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="co"># install.packages('pkgdown')</span>
 <span class="co"># install.packages('tools')</span>
+<span class="co"># install.packages('badger')</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"zhemingfan/rosalindR"</span><span class="op">)</span>
 <span class="co">#&gt; Downloading GitHub repo zhemingfan/rosalindR@HEAD</span>
-<span class="co">#&gt;      checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/RtmpXLcwG8/remotes1fa3344aacd4/zhemingfan-rosalindR-77b1d88/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/RtmpXLcwG8/remotes1fa3344aacd4/zhemingfan-rosalindR-77b1d88/DESCRIPTION’</span>
+<span class="co">#&gt;      checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/RtmpjRWCoK/remotes2083109136cd/zhemingfan-rosalindR-b363ad7/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/RtmpjRWCoK/remotes2083109136cd/zhemingfan-rosalindR-b363ad7/DESCRIPTION’</span>
 <span class="co">#&gt;   ─  preparing ‘rosalindR’:</span>
 <span class="co">#&gt;      checking DESCRIPTION meta-information ...  ✓  checking DESCRIPTION meta-information</span>
 <span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span>
@@ -100,7 +100,7 @@
 <span class="co">#&gt;   ─  building ‘rosalindR_0.0.0.9000.tar.gz’</span>
 <span class="co">#&gt;      </span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Installing package into '/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/Rtmp0Q1NhJ/temp_libpath158d1df62a33'</span>
+<span class="co">#&gt; Installing package into '/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/Rtmp0Q1NhJ/temp_libpath158d7e3b0752'</span>
 <span class="co">#&gt; (as 'lib' is unspecified)</span></code></pre></div>
 </div>
 <div id="example" class="section level2">
@@ -117,90 +117,65 @@
 <div id="development" class="section level2">
 <h2 class="hasAnchor">
 <a href="#development" class="anchor"></a>Development</h2>
-<p>Overall, the initial configuration of this package was developed using the folllowing lines of code: ``` r development # Create package usethis::create_package()</p>
-</div>
-</div>
-<div id="make-a-r-script-containing-key-function" class="section level1">
-<h1 class="hasAnchor">
-<a href="#make-a-r-script-containing-key-function" class="anchor"></a>Make a R script containing key function</h1>
-<p>usethis::use_r() #Specifically usethis::use_r("create_question)</p>
-</div>
-<div id="load-a-package" class="section level1">
-<h1 class="hasAnchor">
-<a href="#load-a-package" class="anchor"></a>Load a package</h1>
-<p>devtools::load_all()</p>
-</div>
-<div id="add-a-license" class="section level1">
-<h1 class="hasAnchor">
-<a href="#add-a-license" class="anchor"></a>Add a license</h1>
-<p>usethis::use_mit_license(“Jeremy Fan”)</p>
-</div>
-<div id="install-the-package-and-restart-r-alternatively-do-install-and-restart-in-right-hand-drop-down-menu-to-access-the-functions-in-this-package" class="section level1">
-<h1 class="hasAnchor">
-<a href="#install-the-package-and-restart-r-alternatively-do-install-and-restart-in-right-hand-drop-down-menu-to-access-the-functions-in-this-package" class="anchor"></a>Install the package and restart R (alternatively, do install and restart in right hand drop down menu to access the functions in this package)</h1>
-<p>devtools::install()</p>
-</div>
-<div id="create-tests-for-package-and-test-them" class="section level1">
-<h1 class="hasAnchor">
-<a href="#create-tests-for-package-and-test-them" class="anchor"></a>Create tests for package and test them</h1>
-<p>usethis::use_testthat() usethis::use_test(“create_question”)</p>
-</div>
-<div id="indicates-dependencies" class="section level1">
-<h1 class="hasAnchor">
-<a href="#indicates-dependencies" class="anchor"></a>Indicates dependencies</h1>
-<p>usethis::use_package(“tools”)</p>
-</div>
-<div id="editing-the-readme" class="section level1">
-<h1 class="hasAnchor">
-<a href="#editing-the-readme" class="anchor"></a>Editing the README</h1>
-<p>usethis::use_readme_rmd()</p>
-</div>
-<div id="build-all-vignettes" class="section level1">
-<h1 class="hasAnchor">
-<a href="#build-all-vignettes" class="anchor"></a>Build all vignettes</h1>
-<p>devtools::build_vignettes() devtools::use_vignette(‘yaml_configuration’)</p>
-</div>
-<div id="add-a-code-of-conduct" class="section level1">
-<h1 class="hasAnchor">
-<a href="#add-a-code-of-conduct" class="anchor"></a>Add a code of conduct</h1>
-<p>usethis::use_code_of_conduct()</p>
-</div>
-<div id="make-a-package-website" class="section level1">
-<h1 class="hasAnchor">
-<a href="#make-a-package-website" class="anchor"></a>Make a package website</h1>
-<p>usethis::use_pkgdown() pkgdown::build_site()</p>
-</div>
-<div id="activate-with-github-pages" class="section level1">
-<h1 class="hasAnchor">
-<a href="#activate-with-github-pages" class="anchor"></a>Activate with GitHub Pages</h1>
-<p>usethis::use_github_action(“pkgdown”)</p>
-</div>
-<div id="add-to-the-changelog" class="section level1">
-<h1 class="hasAnchor">
-<a href="#add-to-the-changelog" class="anchor"></a>Add to the Changelog</h1>
-<p>usethis::use_news_md()</p>
-</div>
-<div id="add-a-badge" class="section level1">
-<h1 class="hasAnchor">
-<a href="#add-a-badge" class="anchor"></a>Add a badge</h1>
-<p>usethis::use_lifecycle_badge(“Experimental”)</p>
-</div>
-<div id="render-the-readme" class="section level1">
-<h1 class="hasAnchor">
-<a href="#render-the-readme" class="anchor"></a>Render the README</h1>
-<p>devtools::build_readme()</p>
-</div>
-<div id="check-the-final-output" class="section level1">
-<h1 class="hasAnchor">
-<a href="#check-the-final-output" class="anchor"></a>Check the final output</h1>
-<p>devtools::check() ```</p>
+<p>Overall, the initial configuration of this package was developed using the folllowing lines of code:</p>
+<pre class="r_development"><code># Create package
+usethis::create_package()
+
+# Make a R script containing key function
+usethis::use_r() #Specifically usethis::use_r("create_question)
+
+# Load a package
+devtools::load_all()
+
+# Add a license
+usethis::use_mit_license("Jeremy Fan")
+
+# Install the package and restart R (alternatively, do install and restart in right hand drop down menu to access the functions in this package)
+devtools::install()
+
+# Create tests for package and test them
+usethis::use_testthat()
+usethis::use_test("create_question")
+
+# Indicates dependencies
+usethis::use_package("tools")
+
+# Editing the README
+usethis::use_readme_rmd()
+
+# Build all vignettes
+devtools::build_vignettes()
+devtools::use_vignette('yaml_configuration')
+
+# Add a code of conduct
+usethis::use_code_of_conduct()
+
+# Make a package website
+usethis::use_pkgdown()
+pkgdown::build_site()
+
+# Activate with GitHub Pages
+usethis::use_github_action("pkgdown")
+
+# Add to the Changelog
+usethis::use_news_md()
+
+# Add a badge
+usethis::use_lifecycle_badge("Experimental")
+
+# Render the README
+devtools::build_readme()
+
+# Check the final output
+devtools::check()</code></pre>
 <p>Github interaction was done through the command line through simple add, commit, and push commands. Debugging was done through <code>devtools::check()</code>. Everytime roxygen description of function was changed, <code>devtools::document()</code> was ran to update files in the <code>man</code> folder. Testing of a package through time was done through <code>devtools::test()</code>.</p>
+</div>
 <div id="manual-work" class="section level2">
 <h2 class="hasAnchor">
 <a href="#manual-work" class="anchor"></a>Manual work</h2>
+<p>More work was to determine the badge license through the <code>badger::badge_license()</code> command. Function was written using existing R knowledge, and unit testing done with with own knowledge.</p>
 </div>
 </div>
-
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -224,13 +199,7 @@
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
-</ul>
-</div>
-</div>
+  </div>
 </div>
 
 

@@ -78,7 +78,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#rosalindr" class="anchor"></a>rosalindR</h1></div>
 <!-- badges: start -->
-<p><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a> “<a href="https://cran.r-project.org/web/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>” <!-- badges: end --></p>
+
 <p>The goal of rosalindR is to offer an alternative platform to <a href="http://rosalind.info/problems/locations/">Rosalind</a>, a website aimed at providing students with bioinformatics coding challenges. In R, students can tackle these problems by being offered a .yaml file with questions and solutions. Open source conributors can further add more problems of Rosalind to this platform.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -91,7 +91,7 @@
 <span class="co"># install.packages('badger')</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"zhemingfan/rosalindR"</span><span class="op">)</span>
 <span class="co">#&gt; Downloading GitHub repo zhemingfan/rosalindR@HEAD</span>
-<span class="co">#&gt;      checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/RtmpjRWCoK/remotes2083109136cd/zhemingfan-rosalindR-b363ad7/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/RtmpjRWCoK/remotes2083109136cd/zhemingfan-rosalindR-b363ad7/DESCRIPTION’</span>
+<span class="co">#&gt;      checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/Rtmpp17BFb/remotes23573a32feaf/zhemingfan-rosalindR-83da8c7/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/Rtmpp17BFb/remotes23573a32feaf/zhemingfan-rosalindR-83da8c7/DESCRIPTION’</span>
 <span class="co">#&gt;   ─  preparing ‘rosalindR’:</span>
 <span class="co">#&gt;      checking DESCRIPTION meta-information ...  ✓  checking DESCRIPTION meta-information</span>
 <span class="co">#&gt;   ─  checking for LF line-endings in source and make files and shell scripts</span>
@@ -100,7 +100,7 @@
 <span class="co">#&gt;   ─  building ‘rosalindR_0.0.0.9000.tar.gz’</span>
 <span class="co">#&gt;      </span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Installing package into '/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/Rtmp0Q1NhJ/temp_libpath158d7e3b0752'</span>
+<span class="co">#&gt; Installing package into '/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/Rtmp0Q1NhJ/temp_libpath158d14293b31'</span>
 <span class="co">#&gt; (as 'lib' is unspecified)</span></code></pre></div>
 </div>
 <div id="example" class="section level2">
@@ -122,13 +122,7 @@
 usethis::create_package()
 
 # Make a R script containing key function
-usethis::use_r() #Specifically usethis::use_r("create_question)
-
-# Load a package
-devtools::load_all()
-
-# Add a license
-usethis::use_mit_license("Jeremy Fan")
+usethis::use_r() #Specifically usethis::use_r("create_question")
 
 # Install the package and restart R (alternatively, do install and restart in right hand drop down menu to access the functions in this package)
 devtools::install()
@@ -136,6 +130,9 @@ devtools::install()
 # Create tests for package and test them
 usethis::use_testthat()
 usethis::use_test("create_question")
+
+# Add a license
+usethis::use_mit_license("Jeremy Fan")
 
 # Indicates dependencies
 usethis::use_package("tools")
@@ -168,12 +165,17 @@ devtools::build_readme()
 
 # Check the final output
 devtools::check()</code></pre>
-<p>Github interaction was done through the command line through simple add, commit, and push commands. Debugging was done through <code>devtools::check()</code>. Everytime roxygen description of function was changed, <code>devtools::document()</code> was ran to update files in the <code>man</code> folder. Testing of a package through time was done through <code>devtools::test()</code>.</p>
+<div id="rationale" class="section level3">
+<h3 class="hasAnchor">
+<a href="#rationale" class="anchor"></a>Rationale</h3>
+<p>Briefly, the package was initialized using the <code>usethis::create_package()</code> before a function called “create_function” was initialized using the <code>usethis::use_r("create_question)</code> command. From here, work was done to finalize the function. Afterwards, unit tests for the function was created by instantiating the unit test directory through <code>usethis::use_testthat()</code>, and creating a specialized unit test for create_function through. <code>usethis::use_test("create_question")</code>. Other aspects of the project such as updating the licensing and adding dependencies were also done through the <code>usethis</code> package. README and vignettes were subsequently created to help provide organization to this repository. Changelogs, code of conducts, package websites, and badges were subsequently added before a final <code>devtools::check()</code> for quality assessment was done.</p>
+<p>Github interaction was done through the command line through simple add, commit, and push commands. As functions were updated <code>devtools::load_all()</code> was ran to make sure the latest version of functions were being used. Debugging was done through <code>devtools::check()</code>. Everytime roxygen description of function was changed, <code>devtools::document()</code> was ran to update files in the <code>man</code> folder. Testing of a package through time was done through <code>devtools::test()</code>. README.md was <strong>rebuilt</strong> using <code>devtools::build_readme()</code></p>
+</div>
 </div>
 <div id="manual-work" class="section level2">
 <h2 class="hasAnchor">
 <a href="#manual-work" class="anchor"></a>Manual work</h2>
-<p>More work was to determine the badge license through the <code>badger::badge_license()</code> command. Function was written using existing R knowledge, and unit testing done with with own knowledge.</p>
+<p>Though no “explicit” manual work such as data cleaning was done, work that can be considered outside of the scope of the above code has been conducted. For instance, more work was to determine the badge license through the <code>badger::badge_license()</code> command. Function was written using existing R knowledge, and unit testing done with with own knowledge.</p>
 </div>
 </div>
   </div>
@@ -199,7 +201,15 @@ devtools::check()</code></pre>
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+<li><a href="https://cran.r-project.org/web/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a></li>
+<li><a href="https://cran.r-project.org/package=rosalindR"><img src="https://tinyverse.netlify.com/badge/rosalindR" alt="Dependencies"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
 

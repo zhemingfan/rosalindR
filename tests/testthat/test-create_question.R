@@ -1,4 +1,4 @@
-test_that("Checking whether input has consistent content compared to a test file and consistent number of arguments... .", {
+test_that("Checking whether input has consistent content compared to a test file...", {
   local_path <- create_question("Question1", "~/.", "Jeremy Fan")
 
   lesson_file <- file.path("~/.", paste0("Question_test.yaml"))
@@ -16,9 +16,6 @@ test_that("Checking whether input has consistent content compared to a test file
   ## Second unit test: two differ files should have same hashes.
   expect_error(expect_identical(as.vector(tools::md5sum(local_path)) , as.vector(tools::md5sum(failed_path))),"as.vector(tools::md5sum(local_path)) not identical to as.vector(tools::md5sum(failed_path)).\n1/1 mismatches\nx[1]: \"3454a07b2701041bb2256dedaeadf899\"\ny[1]: \"81f842aaa1d74c67731b406f3582018d\"", fixed=TRUE)
 
-  ## Third unit test: incomplete number of arguments (missing author arguments)
-  expect_error(create_question("Question1", "~/.") , "argument \"author_name\" is missing, with no default", fixed=TRUE)
-
   ## Remove intermediate files.
   if (file.exists(lesson_file)) {
     file.remove(lesson_file)
@@ -31,4 +28,11 @@ test_that("Checking whether input has consistent content compared to a test file
   if (file.exists(failed_path)) {
     file.remove(failed_path)
   }
+})
+
+test_that("Checking whether input has consistent number of arguments...", {
+
+  ## First unit test: incomplete number of arguments (missing author arguments)
+  expect_error(create_question("Question1", "~/.") , "argument \"author_name\" is missing, with no default", fixed=TRUE)
+
 })

@@ -4,3 +4,11 @@ inst/doc
 doc
 Meta
 docs
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+/*.Rcheck/
+/*.tar.gz
+.Renviron
+

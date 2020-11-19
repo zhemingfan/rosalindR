@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+"[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://cran.r-project.org/web/licenses/MIT)"
 <!-- badges: end -->
 
 The goal of rosalindR is to offer an alternative platform to [Rosalind](http://rosalind.info/problems/locations/), a website aimed at providing students with bioinformatics coding challenges. In R, students can tackle these problems by being offered a .yaml file with questions and solutions. Open source conributors can further add more problems of Rosalind to this platform.
@@ -29,6 +30,7 @@ As `rosalindR` is not on CRAN, you can install the development version of rosali
 # install.packages("devtools")
 # install.packages('pkgdown')
 # install.packages('tools')
+# install.packages('badger')
 devtools::install_github("zhemingfan/rosalindR")
 ```
 
@@ -48,7 +50,7 @@ rosalindR::create_question("Name_of_package","~/.","AuthorName")
 ## Development
 
 Overall, the initial configuration of this package was developed using the folllowing lines of code: 
-``` r development
+```r_development
 # Create package
 usethis::create_package()
 
@@ -104,3 +106,5 @@ devtools::check()
 Github interaction was done through the command line through simple add, commit, and push commands. Debugging was done through `devtools::check()`. Everytime roxygen description of function was changed, `devtools::document()` was ran to update files in the `man` folder. Testing of a package through time was done through `devtools::test()`. 
 
 ## Manual work 
+
+More work was to determine the badge license through the `badger::badge_license()` command. Function was written using existing R knowledge, and unit testing done with with own knowledge.

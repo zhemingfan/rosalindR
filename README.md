@@ -7,6 +7,8 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+“[![License:
+MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://cran.r-project.org/web/licenses/MIT)”
 <!-- badges: end -->
 
 The goal of rosalindR is to offer an alternative platform to
@@ -25,9 +27,10 @@ of rosalindR from [GitHub](https://github.com/) through:
 # install.packages("devtools")
 # install.packages('pkgdown')
 # install.packages('tools')
+# install.packages('badger')
 devtools::install_github("zhemingfan/rosalindR")
 #> Downloading GitHub repo zhemingfan/rosalindR@HEAD
-#>      checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/RtmpXLcwG8/remotes1fa3344aacd4/zhemingfan-rosalindR-77b1d88/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/RtmpXLcwG8/remotes1fa3344aacd4/zhemingfan-rosalindR-77b1d88/DESCRIPTION’
+#>      checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/RtmpjRWCoK/remotes2083109136cd/zhemingfan-rosalindR-b363ad7/DESCRIPTION’ ...  ✓  checking for file ‘/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/RtmpjRWCoK/remotes2083109136cd/zhemingfan-rosalindR-b363ad7/DESCRIPTION’
 #>   ─  preparing ‘rosalindR’:
 #>      checking DESCRIPTION meta-information ...  ✓  checking DESCRIPTION meta-information
 #>   ─  checking for LF line-endings in source and make files and shell scripts
@@ -36,7 +39,7 @@ devtools::install_github("zhemingfan/rosalindR")
 #>   ─  building ‘rosalindR_0.0.0.9000.tar.gz’
 #>      
 #> 
-#> Installing package into '/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/Rtmp0Q1NhJ/temp_libpath158d1df62a33'
+#> Installing package into '/private/var/folders/z4/d0x91kfj1v148xr04zmkynh40000gp/T/Rtmp0Q1NhJ/temp_libpath158d7e3b0752'
 #> (as 'lib' is unspecified)
 ```
 
@@ -61,69 +64,60 @@ rosalindR::create_question("Name_of_package","~/.","AuthorName")
 ## Development
 
 Overall, the initial configuration of this package was developed using
-the folllowing lines of code: \`\`\` r development \# Create package
-usethis::create\_package()
+the folllowing lines of code:
+
+``` r_development
+# Create package
+usethis::create_package()
 
 # Make a R script containing key function
-
-usethis::use\_r() \#Specifically usethis::use\_r("create\_question)
+usethis::use_r() #Specifically usethis::use_r("create_question)
 
 # Load a package
-
-devtools::load\_all()
+devtools::load_all()
 
 # Add a license
-
-usethis::use\_mit\_license(“Jeremy Fan”)
+usethis::use_mit_license("Jeremy Fan")
 
 # Install the package and restart R (alternatively, do install and restart in right hand drop down menu to access the functions in this package)
-
 devtools::install()
 
 # Create tests for package and test them
-
-usethis::use\_testthat() usethis::use\_test(“create\_question”)
+usethis::use_testthat()
+usethis::use_test("create_question")
 
 # Indicates dependencies
-
-usethis::use\_package(“tools”)
+usethis::use_package("tools")
 
 # Editing the README
-
-usethis::use\_readme\_rmd()
+usethis::use_readme_rmd()
 
 # Build all vignettes
-
-devtools::build\_vignettes()
-devtools::use\_vignette(‘yaml\_configuration’)
+devtools::build_vignettes()
+devtools::use_vignette('yaml_configuration')
 
 # Add a code of conduct
-
-usethis::use\_code\_of\_conduct()
+usethis::use_code_of_conduct()
 
 # Make a package website
-
-usethis::use\_pkgdown() pkgdown::build\_site()
+usethis::use_pkgdown()
+pkgdown::build_site()
 
 # Activate with GitHub Pages
-
-usethis::use\_github\_action(“pkgdown”)
+usethis::use_github_action("pkgdown")
 
 # Add to the Changelog
-
-usethis::use\_news\_md()
+usethis::use_news_md()
 
 # Add a badge
-
-usethis::use\_lifecycle\_badge(“Experimental”)
+usethis::use_lifecycle_badge("Experimental")
 
 # Render the README
-
-devtools::build\_readme()
+devtools::build_readme()
 
 # Check the final output
-
-devtools::check() \`\`\`
+devtools::check()
+```
 
 Github interaction was done through the command line through simple add,
 commit, and push commands. Debugging was done through
@@ -133,3 +127,7 @@ folder. Testing of a package through time was done through
 `devtools::test()`.
 
 ## Manual work
+
+More work was to determine the badge license through the
+`badger::badge_license()` command. Function was written using existing R
+knowledge, and unit testing done with with own knowledge.

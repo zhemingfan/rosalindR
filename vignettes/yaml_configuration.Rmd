@@ -1,0 +1,27 @@
+---
+title: "yaml_configuration"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{yaml_configuration}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(rosalindR)
+```
+
+Generally, yaml files containing coding questions can be imported (not implemented yet), and created. For instance, to initialize a yaml file in the root directory:
+
+```{r create_function}
+create_question("Random Sequencing Question","~/.","Jeremy Fan")
+```
+
+In the future, more specific options for what kind of questions will be added, lesson "streams" will be also added to address individuals beginner, intermediate, and advanced levels.
